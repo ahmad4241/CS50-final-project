@@ -1,0 +1,553 @@
+.navbar {
+      display: flex;
+      background-color: whitesmoke;
+      justify-content: flex-start;
+      gap: 10px;
+
+    }
+
+    .navbar > li {
+      position: relative;
+      list-style: none;
+      padding: 10px 35px;
+      color: black;
+      cursor: pointer;
+      text-transform: capitalize;
+      
+    }
+
+    .navbar > li:hover {
+      background-color: #ffff
+    }
+
+    
+    .navbar li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: white;
+      padding: 0;
+      margin: 0;
+      border: 1px solid #ccc;
+      min-width: 150px;
+      z-index: 1000;
+    }
+
+    .navbar li:hover ul {
+      display: block
+    }
+
+    .navbar li ul li {
+      list-style: none;
+      padding: 10px;
+      color: #333;
+      border-bottom: 1px solid #eee;
+      background-color: white;
+    }
+
+    .navbar li ul li:hover {
+      background-color: #f0f0f0;
+    }
+    .continar{
+      display: flex;
+      justify-content: flex-start;
+      
+    }
+    .hero{
+      position: relative;
+    width:100%;
+     height:500px;
+    transform: translateY(-50);
+     background-image: url(kk.jpg);
+     background-size: cover;
+     background-position: center;
+     justify-content: center;
+     text-align: left;
+     color: white;
+     margin-left: -50x;
+     margin-top:-50px;
+    }
+    .hero-conct{
+      padding:100px;
+      border-radius: 10px;
+      background-color: rgba(0,0,0,0.20);
+      
+    }
+    .hero-conct h2{
+      font-size: 32px;
+     
+      padding: 0;
+      margin: 0;
+    
+    }
+    .hero-conct button{
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: rgba(255, 141, 18, 0.676);
+      cursor: pointer;
+      border: none;
+      border-radius:2px;
+      color: white;
+      box-shadow: 2px 2px 2px 2px black;
+      border: 2px solid black;
+      text-transform: uppercase;
+    }
+    button:hover{
+      background-color:rgba(0,0,0,0.5);
+    }
+    .hero-conct p{
+      margin-top: 20px;
+    }
+     .hero-conct >.black{
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color:rgba(0,0,0,0.5);
+      cursor: pointer;
+      border: none;
+      border-radius:px;
+      color: white;
+      box-shadow: 2px 2px 2px 2px black;
+      border: 1px solid rgb(255, 245, 245);
+       margin-right:-10px;
+        text-transform: uppercase;
+        transition: 0.3s;
+        
+      
+     }
+      .hero-conct >.black:hover{
+        background-color:  rgba(255, 141, 18, 0.676); 
+       
+        
+      }
+      .text h2{
+        display: grid;
+         align-content: center;
+         justify-content: center;
+        padding: 20px;
+        font-size: 32px;
+        font-weight: bold;
+      }
+/* From Uiverse.io by G4b413l */ 
+.newtons-cradle {
+  margin: auto;
+ --uib-size: 50px;
+ --uib-speed: 1.2s;
+ --uib-color: #e58e09;
+ position: relative;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: var(--uib-size);
+ height: var(--uib-size);
+}
+
+.newtons-cradle__dot {
+ position: relative;
+ display: flex;
+ align-items: center;
+ height: 100%;
+ width: 25%;
+ transform-origin: center top;
+
+}
+
+.newtons-cradle__dot::after {
+ content: '';
+ display: block;
+ width: 100%;
+ height: 25%;
+ border-radius: 50%;
+ background-color: var(--uib-color);
+}
+
+.newtons-cradle__dot:first-child {
+ animation: swing var(--uib-speed) linear infinite;
+}
+
+.newtons-cradle__dot:last-child {
+ animation: swing2 var(--uib-speed) linear infinite;
+}
+
+@keyframes swing {
+ 0% {
+  transform: rotate(0deg);
+  animation-timing-function: ease-out;
+ }
+
+ 25% {
+  transform: rotate(70deg);
+  animation-timing-function: ease-in;
+ }
+
+ 50% {
+  transform: rotate(0deg);
+  animation-timing-function: linear;
+ }
+}
+
+@keyframes swing2 {
+ 0% {
+  transform: rotate(0deg);
+  animation-timing-function: linear;
+ }
+
+ 50% {
+  transform: rotate(0deg);
+  animation-timing-function: ease-out;
+ }
+
+ 75% {
+  transform: rotate(-70deg);
+  animation-timing-function: ease-in;
+ }
+}
+
+
+* {
+      box-sizing: border-box;
+    }
+
+  
+    .continar2{
+       width:1250px;
+      height: 600px;
+      margin: 40px auto;
+     
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 10px;
+     
+      overflow: hidden;
+
+    }
+   
+
+  .box1{
+    width:500px;
+    height:600px;
+    overflow: hidden;
+    background-image:url(as.jpg) ;
+    background-size: cover;
+    border-radius: 5px;
+  
+  }
+
+.box2 {
+  width:300px;
+  margin: 40px auto;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 150px; /* يضيف مساحة أسفل الصورة والنص */
+
+}
+
+.product-img {
+  width: 100%;
+  height: 400px;
+  display: block;
+  border-bottom: 2px solid #ffffff; /* خط بسيط يفصل الصورة عن الكلام (اختياري) */
+}
+
+
+/* From Uiverse.io by boryanakrasteva */ 
+
+
+.box2 h2 {
+  font-size:25px;
+  font-weight: bold;
+  margin-top: 50px;   /* مسافة فاصلة عن الصورة */
+  margin-bottom: 50px;
+  color: #000000;
+}
+.rating:not(:checked) > label {
+  float: left;
+  cursor: pointer;
+  font-size: 20px;
+  color: #666;
+ 
+padding-block-start: 20px;
+}
+
+.rating:not(:checked) > label:before {
+  content: '★';
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+  color: #e58e09;
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: #ff9e0b;
+}
+
+.rating > input:checked ~ label {
+  color: #ffa723;
+}
+
+/* From Uiverse.io by mRcOol7 */ 
+.ring-futuristic-button {
+  margin: auto;
+  width: 200px;
+  height: 60px;
+  background: linear-gradient(to bottom right, #ff7e5f, #feb47b);
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1px;
+  transition: transform 0.5s, background 0.5s, color 0.3s, box-shadow 0.3s;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+ 
+}
+
+.ring-futuristic-button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 0.5s, opacity 0.5s;
+ 
+}
+
+.ring-futuristic-button:hover {
+  background: linear-gradient(to bottom right, #feb47b, #ff7e5f);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.ring-futuristic-button:hover::before {
+  opacity: 1;
+  transform: scale(2);
+}
+
+.ring-futuristic-button:active {
+  transform: scale(0.95);
+  transition: transform 0.1s;
+}
+
+
+    
+
+.box3 {
+  width:300px;
+  margin: 40px auto;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 150px; /* يضيف مساحة أسفل الصورة والنص */
+
+}
+
+.productt-img {
+  width: 100%;
+  height: 400px;
+  display: block;
+  border-bottom: 2px solid #ffffff; /* خط بسيط يفصل الصورة عن الكلام (اختياري) */
+}
+.rating:not(:checked) > label {
+  float: left;
+  cursor: pointer;
+  font-size: 20px;
+  color: #666;
+padding-block-start: 20px;
+
+}
+
+.rating:not(:checked) > label:before {
+  content: '★';
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+  color: #e58e09;
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: #ff9e0b;
+}
+
+.rating > input:checked ~ label {
+  color: #ffa723;
+}
+
+  
+.box3 h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 50px;   /* مسافة فاصلة عن الصورة */
+  margin-bottom:50px;
+  color: #000000;
+}
+ /* From Uiverse.io by mRcOol7 */ 
+.ring-futuristic-button {
+  width: 200px;
+  height: 60px;
+  background: linear-gradient(to bottom right, #ff7e5f, #feb47b);
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1px;
+  transition: transform 0.5s, background 0.5s, color 0.3s, box-shadow 0.3s;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ring-futuristic-button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.ring-futuristic-button:hover {
+  background: linear-gradient(to bottom right, #feb47b, #ff7e5f);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.ring-futuristic-button:hover::before {
+  opacity: 1;
+  transform: scale(2);
+}
+
+.ring-futuristic-button:active {
+  transform: scale(0.95);
+  transition: transform 0.1s;
+}
+
+/* From Uiverse.io by david-mohseni */ 
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+  height: 120px;
+  width: 100%;
+  padding-top: 40px;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877f2;
+  color: #fff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1da1f2;
+  color: #fff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #e4405f;
+  color: #fff;
+}
+  
+
