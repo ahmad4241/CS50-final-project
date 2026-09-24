@@ -1,553 +1,111 @@
-.navbar {
-      display: flex;
-      background-color: whitesmoke;
-      justify-content: flex-start;
-      gap: 10px;
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#1d1d1d;background:#fff;line-height:1.5}
+img{max-width:100%;display:block}
+a{color:inherit}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-    }
+/* Header */
+.site-header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 clamp(16px,4vw,40px);background:whitesmoke;min-height:60px}
+.brand{font-weight:700;font-size:20px;text-decoration:none;letter-spacing:.02em}
+.navbar{display:flex;gap:6px;list-style:none;margin:0;padding:0}
+.navbar>li{position:relative}
+.nav-link{font:inherit;background:none;border:0;padding:18px 22px;cursor:pointer;color:#000;text-transform:capitalize}
+.navbar>li:hover>.nav-link,.navbar>li.show>.nav-link{background:#fff}
+.sub{display:none;position:absolute;top:100%;right:0;min-width:170px;margin:0;padding:0;list-style:none;background:#fff;border:1px solid #ccc;z-index:1000}
+.sub a{display:block;padding:10px 14px;text-decoration:none;color:#333;border-bottom:1px solid #eee}
+.sub a:hover{background:#f0f0f0}
+.navbar>li:hover>.sub,.navbar>li.show>.sub{display:block}
+.menu-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:10px;border:0;background:none;cursor:pointer}
+.menu-toggle .bar{display:block;height:2px;background:#000;border-radius:2px;transition:transform .3s,opacity .3s}
+.menu-toggle[aria-expanded="true"] .bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] .bar:nth-child(2){opacity:0}
+.menu-toggle[aria-expanded="true"] .bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-    .navbar > li {
-      position: relative;
-      list-style: none;
-      padding: 10px 35px;
-      color: black;
-      cursor: pointer;
-      text-transform: capitalize;
-      
-    }
+/* Hero */
+.hero{position:relative;display:flex;align-items:center;min-height:clamp(420px,70vh,640px);background-size:cover;background-position:center;color:#fff}
+.hero-content{margin:clamp(20px,5vw,60px);padding:clamp(28px,6vw,80px);max-width:640px;border-radius:10px;background:rgba(0,0,0,.35)}
+.hero h1{margin:0;font-size:clamp(28px,5vw,44px);line-height:1.15}
+.hero p{margin:18px 0 26px;font-size:clamp(16px,2vw,18px)}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-block;padding:12px 22px;font-size:16px;text-transform:uppercase;text-decoration:none;color:#fff;border-radius:2px;box-shadow:2px 2px 2px 2px #000;transition:background-color .3s}
+.btn-orange{background:rgba(255,141,18,.85);border:2px solid #000}
+.btn-dark{background:rgba(0,0,0,.55);border:1px solid #fff5f5}
+.btn-orange:hover{background:rgba(0,0,0,.55)}
+.btn-dark:hover{background:rgba(255,141,18,.85)}
 
-    .navbar > li:hover {
-      background-color: #ffff
-    }
+/* Newton's cradle (Uiverse.io by G4b413l) */
+.newtons-cradle{--uib-size:50px;--uib-speed:1.2s;--uib-color:#e58e09;position:relative;display:flex;align-items:center;justify-content:center;width:var(--uib-size);height:var(--uib-size);margin:40px auto 0}
+.newtons-cradle__dot{position:relative;display:flex;align-items:center;height:100%;width:25%;transform-origin:center top}
+.newtons-cradle__dot::after{content:"";display:block;width:100%;height:25%;border-radius:50%;background-color:var(--uib-color)}
+.newtons-cradle__dot:first-child{animation:swing var(--uib-speed) linear infinite}
+.newtons-cradle__dot:last-child{animation:swing2 var(--uib-speed) linear infinite}
+@keyframes swing{0%{transform:rotate(0);animation-timing-function:ease-out}25%{transform:rotate(70deg);animation-timing-function:ease-in}50%{transform:rotate(0);animation-timing-function:linear}}
+@keyframes swing2{0%{transform:rotate(0);animation-timing-function:linear}50%{transform:rotate(0);animation-timing-function:ease-out}75%{transform:rotate(-70deg);animation-timing-function:ease-in}}
 
-    
-    .navbar li ul {
-      display: none;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      background-color: white;
-      padding: 0;
-      margin: 0;
-      border: 1px solid #ccc;
-      min-width: 150px;
-      z-index: 1000;
-    }
+/* Products */
+.products{max-width:1250px;margin:0 auto;padding:20px clamp(16px,4vw,20px) 40px}
+.section-title{text-align:center;font-size:clamp(26px,4vw,32px);margin:30px 0}
+.product-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(16px,3vw,40px);align-items:stretch}
+.promo{display:flex;flex-direction:column;justify-content:flex-end;gap:14px;padding:clamp(24px,4vw,40px);border-radius:8px;color:#fff;background:linear-gradient(160deg,#feb47b,#ff7e5f 55%,#e58e09)}
+.promo h3{margin:0;font-size:clamp(24px,3vw,32px);line-height:1.2}
+.promo-kicker{margin:0;text-transform:uppercase;letter-spacing:.12em;font-size:13px;font-weight:600}
+.promo .btn{align-self:flex-start}
+.product-card{display:flex;flex-direction:column;align-items:center;text-align:center;background:#fff;border-radius:8px;overflow:hidden;padding-bottom:30px;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.product-img{width:100%;aspect-ratio:3/4;height:auto;object-fit:cover;border-bottom:2px solid #fff}
+.product-card h3{font-size:clamp(20px,2.2vw,25px);margin:18px 16px 24px;color:#000}
 
-    .navbar li:hover ul {
-      display: block
-    }
+/* Star rating (Uiverse.io by boryanakrasteva) */
+.rating{display:inline-flex;flex-direction:row-reverse;padding-top:18px}
+.rating input{position:absolute;opacity:0;width:0;height:0}
+.rating label{cursor:pointer;font-size:22px;color:#666;padding:0 2px}
+.rating label::before{content:"\2605"}
+.rating label:hover,.rating label:hover~label{color:#ff9e0b}
+.rating input:checked~label{color:#ffa723}
+.rating input:focus-visible+label{outline:2px solid #e58e09;outline-offset:2px}
 
-    .navbar li ul li {
-      list-style: none;
-      padding: 10px;
-      color: #333;
-      border-bottom: 1px solid #eee;
-      background-color: white;
-    }
+/* Shop button (Uiverse.io by mRcOol7) */
+.ring-futuristic-button{margin:auto auto 0;width:200px;max-width:80%;height:56px;background:linear-gradient(to bottom right,#ff7e5f,#feb47b);color:#fff;font-size:16px;border:none;border-radius:10px;cursor:pointer;position:relative;overflow:hidden;display:flex;justify-content:center;align-items:center;letter-spacing:1px;transition:transform .5s,background .5s,box-shadow .3s;z-index:1;box-shadow:0 5px 15px rgba(0,0,0,.2)}
+.ring-futuristic-button::before{content:"";position:absolute;width:100%;height:100%;border:2px solid rgba(255,255,255,.5);border-radius:50%;opacity:0;transform:scale(0);transition:transform .5s,opacity .5s}
+.ring-futuristic-button:hover{background:linear-gradient(to bottom right,#feb47b,#ff7e5f);transform:scale(1.05);box-shadow:0 10px 20px rgba(0,0,0,.3)}
+.ring-futuristic-button:hover::before{opacity:1;transform:scale(2)}
+.ring-futuristic-button:active{transform:scale(.95);transition:transform .1s}
 
-    .navbar li ul li:hover {
-      background-color: #f0f0f0;
-    }
-    .continar{
-      display: flex;
-      justify-content: flex-start;
-      
-    }
-    .hero{
-      position: relative;
-    width:100%;
-     height:500px;
-    transform: translateY(-50);
-     background-image: url(kk.jpg);
-     background-size: cover;
-     background-position: center;
-     justify-content: center;
-     text-align: left;
-     color: white;
-     margin-left: -50x;
-     margin-top:-50px;
-    }
-    .hero-conct{
-      padding:100px;
-      border-radius: 10px;
-      background-color: rgba(0,0,0,0.20);
-      
-    }
-    .hero-conct h2{
-      font-size: 32px;
-     
-      padding: 0;
-      margin: 0;
-    
-    }
-    .hero-conct button{
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: rgba(255, 141, 18, 0.676);
-      cursor: pointer;
-      border: none;
-      border-radius:2px;
-      color: white;
-      box-shadow: 2px 2px 2px 2px black;
-      border: 2px solid black;
-      text-transform: uppercase;
-    }
-    button:hover{
-      background-color:rgba(0,0,0,0.5);
-    }
-    .hero-conct p{
-      margin-top: 20px;
-    }
-     .hero-conct >.black{
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color:rgba(0,0,0,0.5);
-      cursor: pointer;
-      border: none;
-      border-radius:px;
-      color: white;
-      box-shadow: 2px 2px 2px 2px black;
-      border: 1px solid rgb(255, 245, 245);
-       margin-right:-10px;
-        text-transform: uppercase;
-        transition: 0.3s;
-        
-      
-     }
-      .hero-conct >.black:hover{
-        background-color:  rgba(255, 141, 18, 0.676); 
-       
-        
-      }
-      .text h2{
-        display: grid;
-         align-content: center;
-         justify-content: center;
-        padding: 20px;
-        font-size: 32px;
-        font-weight: bold;
-      }
-/* From Uiverse.io by G4b413l */ 
-.newtons-cradle {
-  margin: auto;
- --uib-size: 50px;
- --uib-speed: 1.2s;
- --uib-color: #e58e09;
- position: relative;
- display: flex;
- align-items: center;
- justify-content: center;
- width: var(--uib-size);
- height: var(--uib-size);
+/* Footer icons (Uiverse.io by david-mohseni) */
+footer{padding:30px 16px 40px;text-align:center}
+.credit{margin:10px 0 0;color:#777;font-size:14px}
+.wrapper{display:inline-flex;list-style:none;margin:0;padding:40px 0 0;justify-content:center}
+.wrapper .icon{position:relative;background:#fff;border-radius:50%;margin:10px;width:50px;height:50px;display:flex;justify-content:center;align-items:center;box-shadow:0 10px 10px rgba(0,0,0,.1);cursor:pointer;transition:all .2s cubic-bezier(.68,-.55,.265,1.55)}
+.wrapper .tooltip{position:absolute;top:0;font-size:14px;background:#fff;color:#fff;padding:5px 8px;border-radius:5px;box-shadow:0 10px 10px rgba(0,0,0,.1);opacity:0;pointer-events:none;transition:all .3s cubic-bezier(.68,-.55,.265,1.55)}
+.wrapper .tooltip::before{position:absolute;content:"";height:8px;width:8px;background:#fff;bottom:-3px;left:50%;transform:translate(-50%) rotate(45deg);transition:all .3s cubic-bezier(.68,-.55,.265,1.55)}
+.wrapper .icon:hover .tooltip{top:-45px;opacity:1}
+.wrapper .facebook:hover,.wrapper .facebook:hover .tooltip,.wrapper .facebook:hover .tooltip::before{background:#1877f2;color:#fff}
+.wrapper .twitter:hover,.wrapper .twitter:hover .tooltip,.wrapper .twitter:hover .tooltip::before{background:#1da1f2;color:#fff}
+.wrapper .instagram:hover,.wrapper .instagram:hover .tooltip,.wrapper .instagram:hover .tooltip::before{background:#e4405f;color:#fff}
+
+/* Tablet */
+@media (max-width:1000px){
+  .product-grid{grid-template-columns:1fr 1fr}
+  .promo{grid-column:1/-1;min-height:220px}
 }
-
-.newtons-cradle__dot {
- position: relative;
- display: flex;
- align-items: center;
- height: 100%;
- width: 25%;
- transform-origin: center top;
-
+/* Phone */
+@media (max-width:720px){
+  .menu-toggle{display:flex}
+  #main-nav{position:absolute;top:100%;left:0;right:0;display:none;background:whitesmoke;border-top:1px solid #e3e3e3;box-shadow:0 12px 20px rgba(0,0,0,.08)}
+  #main-nav.open{display:block}
+  .navbar{flex-direction:column;gap:0}
+  .nav-link{width:100%;text-align:left;padding:14px 20px}
+  .sub{position:static;border:0;background:#fff}
+  .sub a{padding-left:34px}
+  .navbar>li:hover>.sub{display:none}
+  .navbar>li.show>.sub{display:block}
+  .hero-content{margin:16px}
+  .hero-buttons .btn{flex:1 1 auto;text-align:center}
 }
-
-.newtons-cradle__dot::after {
- content: '';
- display: block;
- width: 100%;
- height: 25%;
- border-radius: 50%;
- background-color: var(--uib-color);
+@media (max-width:520px){
+  .product-grid{grid-template-columns:1fr}
 }
-
-.newtons-cradle__dot:first-child {
- animation: swing var(--uib-speed) linear infinite;
+@media (prefers-reduced-motion:reduce){
+  .newtons-cradle__dot{animation:none!important}
+  *{transition:none!important}
 }
-
-.newtons-cradle__dot:last-child {
- animation: swing2 var(--uib-speed) linear infinite;
-}
-
-@keyframes swing {
- 0% {
-  transform: rotate(0deg);
-  animation-timing-function: ease-out;
- }
-
- 25% {
-  transform: rotate(70deg);
-  animation-timing-function: ease-in;
- }
-
- 50% {
-  transform: rotate(0deg);
-  animation-timing-function: linear;
- }
-}
-
-@keyframes swing2 {
- 0% {
-  transform: rotate(0deg);
-  animation-timing-function: linear;
- }
-
- 50% {
-  transform: rotate(0deg);
-  animation-timing-function: ease-out;
- }
-
- 75% {
-  transform: rotate(-70deg);
-  animation-timing-function: ease-in;
- }
-}
-
-
-* {
-      box-sizing: border-box;
-    }
-
-  
-    .continar2{
-       width:1250px;
-      height: 600px;
-      margin: 40px auto;
-     
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-radius: 10px;
-     
-      overflow: hidden;
-
-    }
-   
-
-  .box1{
-    width:500px;
-    height:600px;
-    overflow: hidden;
-    background-image:url(as.jpg) ;
-    background-size: cover;
-    border-radius: 5px;
-  
-  }
-
-.box2 {
-  width:300px;
-  margin: 40px auto;
-  text-align: center;
-  background-color: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  padding-bottom: 150px; /* يضيف مساحة أسفل الصورة والنص */
-
-}
-
-.product-img {
-  width: 100%;
-  height: 400px;
-  display: block;
-  border-bottom: 2px solid #ffffff; /* خط بسيط يفصل الصورة عن الكلام (اختياري) */
-}
-
-
-/* From Uiverse.io by boryanakrasteva */ 
-
-
-.box2 h2 {
-  font-size:25px;
-  font-weight: bold;
-  margin-top: 50px;   /* مسافة فاصلة عن الصورة */
-  margin-bottom: 50px;
-  color: #000000;
-}
-.rating:not(:checked) > label {
-  float: left;
-  cursor: pointer;
-  font-size: 20px;
-  color: #666;
- 
-padding-block-start: 20px;
-}
-
-.rating:not(:checked) > label:before {
-  content: '★';
-}
-
-.rating > input:checked + label:hover,
-.rating > input:checked + label:hover ~ label,
-.rating > input:checked ~ label:hover,
-.rating > input:checked ~ label:hover ~ label,
-.rating > label:hover ~ input:checked ~ label {
-  color: #e58e09;
-}
-
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
-  color: #ff9e0b;
-}
-
-.rating > input:checked ~ label {
-  color: #ffa723;
-}
-
-/* From Uiverse.io by mRcOol7 */ 
-.ring-futuristic-button {
-  margin: auto;
-  width: 200px;
-  height: 60px;
-  background: linear-gradient(to bottom right, #ff7e5f, #feb47b);
-  color: white;
-  font-size: 16px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  outline: none;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 1px;
-  transition: transform 0.5s, background 0.5s, color 0.3s, box-shadow 0.3s;
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
- 
-}
-
-.ring-futuristic-button::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  box-sizing: border-box;
-  opacity: 0;
-  transform: scale(0);
-  transition: transform 0.5s, opacity 0.5s;
- 
-}
-
-.ring-futuristic-button:hover {
-  background: linear-gradient(to bottom right, #feb47b, #ff7e5f);
-  color: #fff;
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.ring-futuristic-button:hover::before {
-  opacity: 1;
-  transform: scale(2);
-}
-
-.ring-futuristic-button:active {
-  transform: scale(0.95);
-  transition: transform 0.1s;
-}
-
-
-    
-
-.box3 {
-  width:300px;
-  margin: 40px auto;
-  text-align: center;
-  background-color: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  padding-bottom: 150px; /* يضيف مساحة أسفل الصورة والنص */
-
-}
-
-.productt-img {
-  width: 100%;
-  height: 400px;
-  display: block;
-  border-bottom: 2px solid #ffffff; /* خط بسيط يفصل الصورة عن الكلام (اختياري) */
-}
-.rating:not(:checked) > label {
-  float: left;
-  cursor: pointer;
-  font-size: 20px;
-  color: #666;
-padding-block-start: 20px;
-
-}
-
-.rating:not(:checked) > label:before {
-  content: '★';
-}
-
-.rating > input:checked + label:hover,
-.rating > input:checked + label:hover ~ label,
-.rating > input:checked ~ label:hover,
-.rating > input:checked ~ label:hover ~ label,
-.rating > label:hover ~ input:checked ~ label {
-  color: #e58e09;
-}
-
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
-  color: #ff9e0b;
-}
-
-.rating > input:checked ~ label {
-  color: #ffa723;
-}
-
-  
-.box3 h2 {
-  font-size: 25px;
-  font-weight: bold;
-  margin-top: 50px;   /* مسافة فاصلة عن الصورة */
-  margin-bottom:50px;
-  color: #000000;
-}
- /* From Uiverse.io by mRcOol7 */ 
-.ring-futuristic-button {
-  width: 200px;
-  height: 60px;
-  background: linear-gradient(to bottom right, #ff7e5f, #feb47b);
-  color: white;
-  font-size: 16px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  outline: none;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 1px;
-  transition: transform 0.5s, background 0.5s, color 0.3s, box-shadow 0.3s;
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.ring-futuristic-button::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  box-sizing: border-box;
-  opacity: 0;
-  transform: scale(0);
-  transition: transform 0.5s, opacity 0.5s;
-}
-
-.ring-futuristic-button:hover {
-  background: linear-gradient(to bottom right, #feb47b, #ff7e5f);
-  color: #fff;
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.ring-futuristic-button:hover::before {
-  opacity: 1;
-  transform: scale(2);
-}
-
-.ring-futuristic-button:active {
-  transform: scale(0.95);
-  transition: transform 0.1s;
-}
-
-/* From Uiverse.io by david-mohseni */ 
-.wrapper {
-  display: inline-flex;
-  list-style: none;
-  height: 120px;
-  width: 100%;
-  padding-top: 40px;
-  font-family: "Poppins", sans-serif;
-  justify-content: center;
-}
-
-.wrapper .icon {
-  position: relative;
-  background: #fff;
-  border-radius: 50%;
-  margin: 10px;
-  width: 50px;
-  height: 50px;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .tooltip {
-  position: absolute;
-  top: 0;
-  font-size: 14px;
-  background: #fff;
-  color: #fff;
-  padding: 5px 8px;
-  border-radius: 5px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .tooltip::before {
-  position: absolute;
-  content: "";
-  height: 8px;
-  width: 8px;
-  background: #fff;
-  bottom: -3px;
-  left: 50%;
-  transform: translate(-50%) rotate(45deg);
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .icon:hover .tooltip {
-  top: -45px;
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.wrapper .icon:hover span,
-.wrapper .icon:hover .tooltip {
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
-}
-
-.wrapper .facebook:hover,
-.wrapper .facebook:hover .tooltip,
-.wrapper .facebook:hover .tooltip::before {
-  background: #1877f2;
-  color: #fff;
-}
-
-.wrapper .twitter:hover,
-.wrapper .twitter:hover .tooltip,
-.wrapper .twitter:hover .tooltip::before {
-  background: #1da1f2;
-  color: #fff;
-}
-
-.wrapper .instagram:hover,
-.wrapper .instagram:hover .tooltip,
-.wrapper .instagram:hover .tooltip::before {
-  background: #e4405f;
-  color: #fff;
-}
-  
-
