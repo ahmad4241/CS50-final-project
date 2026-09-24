@@ -551,3 +551,27 @@ padding-block-start: 20px;
 }
   
 
+
+/* ===== Responsive (added) : only media queries, the HTML and the rules above are unchanged ===== */
+img { max-width: 100%; }
+
+@media (max-width: 1280px) {
+  .continar2 { width: auto; max-width: 1250px; height: auto; flex-wrap: wrap; gap: 24px; justify-content: center; }
+  .box1 { width: 100%; max-width: 500px; height: 400px; }
+}
+
+@media (max-width: 768px) {
+  .navbar { flex-wrap: wrap; justify-content: center; gap: 0; padding: 0; margin: 0; }
+  .navbar > li { padding: 12px 14px; }
+  .navbar li ul { left: 0; right: auto; }
+  .hero { height: auto !important; min-height: 420px; margin-top: 0; }
+  .hero-conct { padding: 40px 20px; }
+  .hero-conct h2 { font-size: 24px; }
+  .hero-conct button { margin-top: 10px; }
+  .text h2 { font-size: 24px; padding: 10px; }
+  .continar2 { padding: 10px; margin: 20px auto; }
+  .box1 { display: none; }
+  .box2, .box3 { width: 100%; max-width: 340px; margin: 20px auto; padding-bottom: 40px; }
+  .product-img { height: auto; aspect-ratio: 3 / 4; object-fit: cover; }
+  .box2 h2, .box3 h2 { margin: 30px 0; }
+}
